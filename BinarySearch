@@ -1,0 +1,60 @@
+# Description: This program guesses the user selected number between 1 and 100 in 7 guesses.
+
+def main():
+  # Present game to user
+  print()
+  print("Guessing Game")
+  print()
+  print("Think of a number between 1 and 100 inclusive.\nAnd I will guess what it is in 7 tries or less.")
+
+  # Ask user if ready
+  print()
+  ready = input("Are you ready? (y/n): ")
+  while (ready != 'y') and (ready != 'n'):
+    ready = input("Are you ready? (y/n): ")
+
+  if (ready == 'n'):
+    print()
+    print("Bye")
+    print()
+  
+  # If user is ready, initialize game with first guess and check
+  elif (ready == 'y'):
+    print()
+    lo = 1
+    hi = 100
+    mid = (lo+hi) // 2
+    guessNum = 1
+    print ("Guess ", guessNum, ":  The number you thought was", mid)
+    userCheck = input("Enter 1 if my guess was high, -1 if low, and 0 if correct: ")
+    allowed = ['1', '-1', '0']
+    while (userCheck not in allowed):
+      userCheck = input("Enter 1 if my guess was high, -1 if low, and 0 if correct: ")
+
+    # Continually guess and check until 7 tries are up
+    while (guessNum < 7):
+      guessNum += 1
+      if (userCheck == '-1'):
+        lo = mid + 1
+      elif (userCheck == '1'):
+        hi = mid - 1
+      mid = (lo+hi) // 2
+      print ()
+      print ("Guess ", guessNum, ": ", "The number you thought was", mid)
+      userCheck = input("Enter 1 if my guess was high, -1 if low, and 0 if correct: ")
+      while (userCheck not in allowed):
+        userCheck = input("Enter 1 if my guess was high, -1 if low, and 0 if correct: ")
+      # Once correctly guessed, end game
+      if (userCheck == '0'):
+        break
+   
+    if (userCheck == '0'):
+      print ()
+      print ("Thank you for playing the Guessing Game.")
+      print()
+    # If not correctly guessed, tell user there was a mistake
+    else:
+      print()
+      print("Either you guessed a number out of range or you had an incorrect entry.")
+      print()
+main()
