@@ -2,13 +2,7 @@
 
 #  Description: Encipher a Message with Binary Trees
 
-#  Student Name: Samuel Gutierrez
-
-#  Student UT EID: sfg384
-
-#  Partner Name: Mathew Perez
-
-#  Partner UT EID: mjp3457
+#  Student Name: Mathew Perez
 
 #  Course Name: CS 313E
 
