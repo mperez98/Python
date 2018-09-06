@@ -106,7 +106,7 @@ class Tree (object):
   # if the input parameter does not lead to a valid character in the tree.
   def traverse (self, st):
     current = self.root
-    #a = st.split("!")
+
     
     if (current == None):
       return ""
@@ -131,8 +131,11 @@ class Tree (object):
     string = ''
     st = st.lower()
     for x in st:
-      if x.isalpha() or x.isspace(): 
-        string += self.search(x) + '!'
+      if x.isalpha() or x.isspace():
+        if (self.search(x) == ''):
+          string += ''
+        else:
+          string += self.search(x) + '!'
     string = string[0:-1]
     return string
 
@@ -142,7 +145,10 @@ class Tree (object):
     st = st.split('!')
     string = ''
     for x in st:
-      string += str(self.traverse(x))
+      if (x == ''):
+        string += ''
+      else:
+        string += str(self.traverse(x))
     return string
   
 
