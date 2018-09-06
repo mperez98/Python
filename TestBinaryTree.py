@@ -6,10 +6,6 @@
 
 #  Student UT EID: mjp3457
 
-#  Partner Name: Samuel F. Gutierrez
-
-#  Partner UT EID: sfg384
-
 #  Course Name: CS 313E
 
 #  Unique Number: 51340
